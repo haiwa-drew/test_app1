@@ -1,0 +1,47 @@
+
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            Signup
+        </title>
+    {% load static %}
+        <link rel="stylesheet" href="{% static 'jt.css' %}">
+    </head>
+    <body>
+        <div class="rectangle"></div>
+
+      <!-- <div class="label">Username :</div>
+        <input type="text" placeholder="Username" class="rect"></input>
+        <div class="label1">Email Address :</div>
+        <input type="text" placeholder="Email Address" class="rect1"></input>
+        <div class="label2">Password :</div>
+        <input type="password" placeholder="Password" class="rect2"></input>
+        <div class="label3">Confirm Password :</div>
+        <input type="password" placeholder="Confirm Password" class="rect3"></input>
+        <button type="submit" class = "label4" >SIGN UP</button> -->
+
+
+
+        <form method="post" action="{% url 'homepage' %}">
+            {% csrf_token %}
+            <div class="rectangle"></div>
+            <div class="label">Username :</div>
+            {{ form.username }}
+            <div class="label1">Email Address :</div>
+            {{ form.email }}
+            <div class="label2">Password :</div>
+            {{ form.password }}
+            <div class="label3">Confirm Password :</div>
+            {{ form.confirm_password }}
+            <button type="submit" class="label4">SIGN UP</button>
+        </form>
+
+
+
+
+
+        <p><span class="underlined"> Already have an account </span><a  href="{% url 'login' %}"><span class="signin">sign in</span></a></p>
+    </body>
+</html>

@@ -1,0 +1,22 @@
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            Log in
+        </title>
+    {% load static %}
+        <link rel="stylesheet" href="{% static 'pt.css' %}">
+    </head>
+    <body>
+        <div class="rectangle"></div>
+      <form method="post"  action="{% url 'homepage' %}">
+        {% csrf_token %}
+        <div class="label1">Username :</div>
+        <input type="text" placeholder="Username" class="rect1"></input>
+        <div class="label2">Password :</div>
+        <input type="password" placeholder="Password" class="rect2"></input>
+        <button  type="submit" class = "label4">LOG IN</button>
+      </form>
+    </body>
+</html>
